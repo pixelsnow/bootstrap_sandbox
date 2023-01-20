@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 
 import MyCard from "./MyCard";
+import Accordions from "./Accordions";
+
+import "./Main.css";
 
 const Main = () => {
   const [cards, setCards] = useState([
@@ -27,13 +30,16 @@ const Main = () => {
   return (
     <main>
       <h1>Main</h1>
-      {cards.map((card) => (
-        <MyCard
-          title={card.cardTitle}
-          description={card.description}
-          image={card.image}
-        />
-      ))}
+      <div className="cards_container">
+        {cards.map((card) => (
+          <MyCard
+            title={card.cardTitle}
+            description={card.description}
+            image={card.image}
+          />
+        ))}
+      </div>
+      <Accordions />
     </main>
   );
 };
